@@ -223,7 +223,7 @@
 				"Compulsion",
 				"Confusion",
 				"Dominate Beast",
-				"Phantasmal Killer",
+				"Dimension Door",
 				"Animate Objects",
 				"Creation",
 				"Dominate Person",
@@ -644,8 +644,7 @@
 					"type": "entries",
 					"name": "Puppet Spells",
 					"entries": [
-						"Each of your bound puppets grants you access to a list of spells that you can cast while the puppet is active. When you cast a spell granted by a puppet, the spell originates from that puppet instead of you. If the spell has a range of Self, it targets the puppet instead of you.",
-						"You can cast these spells without providing material components, regardless of their cost. You must still maintain concentration on spells that require it as normal, and any puppet spell ends immediately if the originating puppet becomes broken."
+						"Each Persona grants its puppet a list of spells it can cast when you command it. Puppets can cast these spells without providing material components, regardless of their cost, but use your spell slots and spellcasting modifier. If required, you must still maintain {@status concentration||concentration} on these spells and any puppet spell ends immediately if the originating puppet becomes broken."
 					]
 				}
 			]
@@ -671,8 +670,8 @@
 				{
 					"type": "list",
 					"items": [
-						"When you make a {@skill Performance|phb} check that involves atleast one of your puppets, you can add double your proficiency bonus to the check.",
-						"As a bonus action, you can see and hear through one of your active puppets. While doing so, you are {@condition blinded||blind} and {@condition deafened||deaf} to your own surroundings. You can end the effect at anytime during your turns.",
+						"You gain proficiency in the {@skill Performance|phb} skill if you don't already have it and when you make a {@skill Performance|phb} check that involves at least one of your puppets, you can add double your proficiency bonus to the check.",
+						"As a bonus action, you can see and hear through one of your active puppets. While doing so, you are {@condition blinded||blind} and {@condition deafened||deaf} to your own surroundings. You can end the effect at anytime during your turns. (no action required)",
 						"When you cast a spell, you can choose to have it originate from one of your puppets instead of you. You must still be able to see the target."
 					]
 				}
@@ -1263,7 +1262,7 @@
 					"name": "\uFFF0Puppet Spells",
 					"type": "spellcasting",
 					"headerEntries": [
-						"{@spell Tasha's Hideous Laughter|phb}, {@spell Enlarge/Reduce|phb}, {@spell Enemies Abound|xge}, {@spell Dimension Door|phb}, {@spell Synaptic Static|xge}"
+						"{@spell Tasha's Hideous Laughter|phb}, {@spell Enlarge/Reduce|phb}, {@spell Enemies Abound|xge}, {@spell Phantasmal Killer|phb}, {@spell Synaptic Static|xge}"
 					]
 				}
 			],
@@ -1275,31 +1274,31 @@
 						{
 							"type": "list",
 							"items": [
-								"{@i {@b Tasha's Hideous Laughter}} If a creature succeeds on its saving throw against this spell, you can cause another creature of your choice within range to become the target of that spell. At start of the creatures turn it takes {@damage 3d6} psychic damage. Damage dealt from this feature does not trigger another saving throw."
+								"{@i {@b Tasha's Hideous Laughter.}} If a creature succeeds on its saving throw against this spell, you can cause another creature of your choice within range to become the target of that spell. At start of the creatures turn it takes {@damage 3d6} psychic damage. Damage dealt from this feature does not trigger another saving throw."
 							]
 						},
 						{
 							"type": "list",
 							"items": [
-								"{@i {@b Enlarge/Reduce}} The effects of this spell are increased when cast on puppets. WIP When you target a puppet with the Reduce effect of this spell, you can cast it without expending a spell slot."
+								"{@i {@b Enlarge/Reduce.}} The effects of this spell are increased when cast on puppets. WIP When you target a puppet with the Reduce effect of this spell, you can cast it without expending a spell slot."
 							]
 						},
 						{
 							"type": "list",
 							"items": [
-								"{@i {@b Enemies Abound}} You can target one additional creature."
+								"{@i {@b Enemies Abound.}} You can target one additional creature."
 							]
 						},
 						{
 							"type": "list",
 							"items": [
-								"{@i {@b Dimension Door}} The Puppet counts as a medium creature for this spell. If the puppet only teleports up to 250 feet, it can choose to leave the doorway open. Until the end of your next turn, other creatures can use the doorway to teleport to the same location the puppet teleported to. You can close the doorway at any time."
+								"{@i {@b Phantasmal Killer.}} The target automatically fails its initial saving throw against the spell."
 							]
 						},
 						{
 							"type": "list",
 							"items": [
-								"{@i {@b Synaptic Static}} WIP"
+								"{@i {@b Synaptic Static.}} WIP"
 							]
 						}
 					]
@@ -1313,7 +1312,7 @@
 				{
 					"name": "\uFFF3Greater Control",
 					"entries": [
-						"{@i (11th-level Puppeteer feature)}",
+						"{@i (10th-level Puppeteer feature)}",
 						"When the puppet uses Control Fear, it can target two creatures instead of one."
 					]
 				}
@@ -1333,9 +1332,9 @@
 					]
 				},
 				{
-					"name": "Distract",
+					"name": "Dagger",
 					"entries": [
-						"The puppet distracts one creature it can see within 30 feet of it. The target must succeed on a Wisdom saving throw against your spell save DC or be distracted until the start of your next turn. The next attack roll made against the target by a creature other than the puppet has advantage and deals an additional 2d6 damage. On a successful save, the target is immune to this action for 24 hours."
+						"{@atkr r} {@hitYourSpellAttack Bonus equals your spell attack modifier}, reach 5 ft. {@h}{@damage 1d4} plus your Intelligence modifier Piercing damage."
 					]
 				}
 			],
@@ -1343,9 +1342,9 @@
 			],
 			"reaction": [
 				{
-					"name": "Fool's Tumble",
+					"name": "Distract",
 					"entries": [
-						"WIP"
+						"When a creature within 30 feet of the puppet is attacked and the attack misses, the puppet can attempt to distract the target. Roll a {@damage d6} and add it to the attack roll, potentially turning the miss into a hit."
 					]
 				}
 			],
@@ -1415,7 +1414,7 @@
 					]
 				},
 				{
-					"name": "\uFFF1Magician Cantrips",
+					"name": "\uFFF1Puppet Cantrips",
 					"type": "spellcasting",
 					"headerEntries": [
 						"{@spell Acid Splash|phb}, {@spell Fire Bolt|phb}, {@spell Frostbite|xge}, {@spell Gust|xge}, {@spell Light|phb}, {@spell Mind Sliver|tce}, {@spell Poison Spray|phb}, {@spell Ray of Frost|phb}, {@spell Shocking Grasp|phb}, {@spell Thunderclap|xge}"
@@ -1426,28 +1425,21 @@
 				{
 					"name": "\uFFF2Cantrip Savant",
 					"entries": [
-						"Choose 2 cantrips from the above Magician Cantrips list to prepare. The puppet can cast any of the chosen cantrips when it takes the Cast Cantrip action. You can change its chosen cantrips when you finish a long rest."
+						"Choose 2 cantrips from the above Puppet Cantrips list to prepare. The puppet can cast the chosen cantrips until the end of your next long rest. You can change its chosen cantrips when you finish a long rest.",
+						"The amount of prepared cantrips increases to 3 when you reach level 11 in this class, 4 at level 15."
 					]
 				},
 				{
 					"name": "\uFFF3Circle Chant",
 					"entries": [
-						"{@i (6th-level Puppeteer feature)}",
 						"The puppet aids you in the casting of your rituals. You can cast any ritual spell from your spell list as a ritual, even if you do not have it prepared. When you cast a spell as a ritual, the additional time required to cast it is halved."
-					]
-				},
-				{
-					"name": "\uFFF4Empower Spell (1/Day)",
-					"entries": [
-						"{@i (6th-level Puppeteer feature)}",
-						"The amount of prepared cantrips increases to 3. When you cast a 1st level or higher spell that originates from the puppet, the spell is treated as if cast using a spell slot one level higher than the slot you expend."
 					]
 				},
 				{
 					"name": "\uFFF5Potent Cantrip",
 					"entries": [
-						"{@i (11th-level Puppeteer feature)}",
-						"The amount of prepared cantrips increases to 4. When the puppet casts a cantrip at a creature and misses with the attack roll or the target succeeds on a saving throw against the cantrip, the target takes half the cantrip's damage (if any) but suffers no additional effects from the cantrip."
+						"{@i (10th-level Puppeteer feature)}",
+						"When the puppet casts a cantrip at a creature and misses with the attack roll or the target succeeds on a saving throw against the cantrip, the target takes half the cantrip's damage (if any) but suffers no additional effects from the cantrip."
 					]
 				}
 			],
@@ -1463,9 +1455,10 @@
 			],
 			"reaction": [
 				{
-					"name": "Sharpened Mind (1/Day)",
+					"name": "Empower Spell (2/Day)",
 					"entries": [
-						"When you fail a Constitution saving throw to maintain {@status concentration||concentration} on a spell, you can use your reaction to succeed instead."
+						"{@i (6th-level Puppeteer feature)}",
+						"When you use your Puppet Show feature to originate a spell from this puppet, or when another willing creature within 30 feet of the puppet casts a spell of 1st level or higher, the puppet joins in the casting, causing the spell to be treated as if cast using a spell slot one level higher than the slot expended. The puppet can only empower spells of 5th level or lower."
 					]
 				}
 			],
@@ -1544,20 +1537,20 @@
 			],
 			"trait": [
 				{
-					"name": "Sneak Attack (1/Round)",
+					"name": "\uFFF0Sneak Attack (1/Round)",
 					"entries": [
 						"The puppet deals an extra {@damage 1d6} damage when it hits a target with a weapon attack and has advantage on the attack roll, or when the target is within 5 feet of an enemy of the target that isn't {@condition incapacitated} and the puppet doesn't have disadvantage on the attack roll. The extra damage increases when you reach certain levels in the puppeteer class: {@damage 2d6} at 7th level, {@damage 3d6} at 11th level, and {@damage 4d6} at 15th level."
 					]
 				},
 				{
-					"name": "Superior Substitution",
+					"name": "\uFFF1Superior Substitution",
 					"entries": [
-						"{@i (11th-level Puppeteer feature)}",
+						"{@i (6th-level Puppeteer feature)}",
 						"The range of Substitution increases to 60 feet. When the puppet uses Substitution, it can now swap places with a Medium or smaller creature within range instead of teleporting to an unoccupied space. The chosen creature must succeed on a Constitution saving throw against your spell save DC or be swapped with the puppet, becoming the target of the triggering attack. On a successful save, the swap fails, and the puppet teleports to an unoccupied space as normal."
 					]
 				},
 				{
-					"name": "Evasion",
+					"name": "\uFFF2Evasion",
 					"entries": [
 						"{@i (15th-level Puppeteer feature)}",
 						"When the puppet is subjected to an effect that allows it to make a Dexterity saving throw to take only half damage, it instead takes no damage if it succeeds on the saving throw, and only half damage if it fails."
@@ -1572,7 +1565,7 @@
 					]
 				},
 				{
-					"name": "Substitution (1/Day)",
+					"name": "Substitution",
 					"entries": [
 						"The puppet activates Substitution without using a reaction or requiring its usual trigger."
 					]
@@ -1584,20 +1577,21 @@
 					"entries": [
 						"The puppet takes the Hide action as a bonus action."
 					]
-				},
-				{
-					"name": "Take Aim",
-					"entries": [
-						"{@i (6th-level Puppeteer feature)}",
-						"As a bonus action, the puppet can steady itself. Until the end of this turn, the puppet’s ranged weapon attacks don’t suffer disadvantage from long range and ignore half cover. The puppet can use this bonus action only if it hasn’t moved this turn, and its speed becomes 0 until the end of the turn."
-					]
 				}
 			],
 			"reaction": [
 				{
+					"name": "Assassinate",
+					"entries": [
+						"{@i (10th-level Puppeteer feature)}",
+						"WIP"
+					]
+				},
+				{
 					"name": "Substitution (1/Day)",
 					"entries": [
-						"When a creature hits the puppet with an attack, you can use your reaction to cause the attack to miss and teleport the puppet up to 30 feet to an unoccupied space you can see."
+						"When a creature hits the puppet with an attack, you can use your reaction to cause the attack to miss and teleport the puppet up to 30 feet to an unoccupied space you can see.",
+						"You can expend a spell slot (no action required) to regain one use of this feature."
 					]
 				}
 			],
@@ -1621,7 +1615,7 @@
 			"type": "construct",
 			"ac": [
 				{
-				"ac": "10 + PB + your Intelligence modifier",
+				"ac": "14 + PB",
 					"from": [
 						"natural armor"
 					]
@@ -1672,22 +1666,30 @@
 			],
 			"trait": [
 				{
-					"name": "Hardened Frame",
+					"name": "\uFFF0Hardened Frame",
 					"entries": [
 						"The puppet gains a bonus to it's AC equal to your Intelligence modifier."
 					]
 				},
 				{
-					"name": "Retaliate",
+					"name": "\uFFF1Retaliate",
 					"entries": [
 						"{@i (6th-level Puppeteer feature)}",
 						"When a attack against a creature protected by the Deflect Attacks reaction misses, the puppet can make a opportunity attack against the attacker as part of the same reaction. This opportunity attack can only be made once per use of the Deflect Attacks reaction."
 					]
 				},
 				{
-					"name": "Punisher",
+					"name": "\uFFF2Perfect Counter",
 					"entries": [
-						"The puppet has advantage on opportunity attacks, and its opportunity attacks deal one additional die of damage."
+						"{@i (10th-level Puppeteer feature)}",
+						"If the attack that triggers Retaliate misses with both dice due to disadvantage, the puppet makes the opportunity attack with advantage and deals an additional {@damage 2d6} damage."
+					]
+				},
+				{
+					"name": "\uFFF3Reflect Magic",
+					"entries": [
+						"{@i (15th-level Puppeteer feature)}",
+						"WIP"
 					]
 				}
 			],
